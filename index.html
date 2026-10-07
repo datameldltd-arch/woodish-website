@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Woodish Furniture | Home Furniture in Rawalpindi</title>
+<meta name="description" content="Beds, sofas, armchairs and complete home furniture in Rawalpindi. Easy instalments, home delivery, order on WhatsApp. Open daily 9am to 9pm.">
+<meta name="theme-color" content="#100c09">
+<meta property="og:title" content="Woodish Furniture | Home Furniture in Rawalpindi">
+<meta property="og:description" content="Premium home furniture, easy instalments and home delivery. Browse the catalogue and order on WhatsApp.">
+<meta property="og:image" content="assets/og-image.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FurnitureStore","name":"Woodish Furniture","telephone":"+923474747751",
+"address":{"@type":"PostalAddress","streetAddress":"Kuri Road, Amer Pura Mohalla Chowk","addressLocality":"Rawalpindi","postalCode":"46000","addressCountry":"PK"},
+"geo":{"@type":"GeoCoordinates","latitude":33.6241875,"longitude":73.0716875},
+"openingHours":"Mo-Su 09:00-21:00","sameAs":["https://www.instagram.com/woodishfurnitur/"]}
+</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="#hero" class="brand" aria-label="Woodish Furniture home"><img src="assets/logo-word.png" alt="Woodish" height="34"></a>
+  <nav class="nav-links" aria-label="Main">
+    <a href="#categories">Collections</a>
+    <a href="#catalogue">Catalogue</a>
+    <a href="#service">Instalments &amp; delivery</a>
+    <a href="#visit">Visit us</a>
+  </nav>
+  <div class="nav-right">
+    <span class="open-pill" id="openPill" hidden><i></i><span id="openText"></span></span>
+    <button class="basket-btn" id="basketBtn" aria-label="Open basket">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 11H6.2zM9 8V6a3 3 0 0 1 6 0v2"/></svg>
+      <span>Basket</span><b id="basketCount">0</b>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="hero" class="hero">
+  <div class="hero-stage">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-frames" aria-hidden="true">
+      <figure class="hf hf1"><img src="assets/products/inlay-bed.jpg" alt=""></figure>
+      <figure class="hf hf2"><img src="assets/products/sage-lounge-chair.jpg" alt=""></figure>
+      <figure class="hf hf3"><img src="assets/products/solid-wood-bed.jpg" alt=""></figure>
+      <figure class="hf hf4"><img src="assets/products/round-ottoman.jpg" alt=""></figure>
+    </div>
+    <p class="hero-line" aria-hidden="true">Crafted in wood.<br><em>Finished for comfort.</em></p>
+    <div class="hero-copy">
+      <p class="eyebrow">Rawalpindi &middot; Home furniture &middot; Open daily 9am to 9pm</p>
+      <h1>Furniture that turns a house into a home.</h1>
+      <p class="hero-sub">Beds, sofas, chairs and everything between. Easy instalments. Delivered to your door.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#catalogue">Browse the catalogue</a>
+        <a class="btn btn-ghost" id="heroWa" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      </div>
+    </div>
+    <a class="scroll-cue" href="#categories" aria-label="Scroll down"><span></span></a>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip" aria-label="Highlights">
+  <div class="strip-track">
+    <span>Easy instalments</span><i></i><span>Home delivery</span><i></i><span>Solid wood</span><i></i><span>Order on WhatsApp</span><i></i><span>Premium finish</span><i></i>
+    <span>Easy instalments</span><i></i><span>Home delivery</span><i></i><span>Solid wood</span><i></i><span>Order on WhatsApp</span><i></i><span>Premium finish</span><i></i>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section id="categories" class="section">
+  <div class="wrap">
+    <p class="kicker reveal">Collections</p>
+    <h2 class="reveal">Every room, one showroom.</h2>
+    <p class="lead reveal">From the bedroom to the lounge, choose a collection and see what is on the floor now.</p>
+    <div class="cat-grid" id="catGrid"></div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+<section id="catalogue" class="section section-alt">
+  <div class="wrap">
+    <p class="kicker reveal">Catalogue</p>
+    <h2 class="reveal">Pick your pieces.</h2>
+    <p class="lead reveal">Add what you like to the basket and send the whole list to us on WhatsApp. We confirm price, availability and delivery with you directly.</p>
+
+    <div class="tools reveal">
+      <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Search beds, chairs, sofas..." autocomplete="off"></label>
+    </div>
+    <div class="chips" id="chips" role="tablist" aria-label="Filter by collection"></div>
+
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <p class="empty" id="empty" hidden></p>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service" class="section">
+  <div class="wrap">
+    <p class="kicker reveal">Made easy</p>
+    <h2 class="reveal">Buy now. Pay in comfort.</h2>
+    <div class="trio">
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v12H3zM3 11h18M7 15h4"/></svg>
+        <h3>Instalment plans</h3>
+        <p>Spread the cost of your furniture over time. Tell us your budget on WhatsApp and we will work out a plan that suits you.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h12v10H2zM14 10h4l3 3v3h-7zM6 19a2 2 0 1 0 0-.01M17 19a2 2 0 1 0 0-.01"/></svg>
+        <h3>Delivery to your door</h3>
+        <p>We deliver your order to your home. Share your area when you message us and we will confirm timing and charges.</p>
+      </article>
+      <article class="card reveal">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 16.3 6.8 19l1-5.8L3.6 9.1l5.8-.8z"/></svg>
+        <h3>Built to last</h3>
+        <p>Solid wood frames, quality upholstery and careful finishing. Come and see, touch and sit before you decide.</p>
+      </article>
+    </div>
+    <ol class="steps">
+      <li class="reveal"><b>1</b><span>Choose your pieces in the catalogue</span></li>
+      <li class="reveal"><b>2</b><span>Send your basket to us on WhatsApp</span></li>
+      <li class="reveal"><b>3</b><span>We confirm price, plan and delivery</span></li>
+      <li class="reveal"><b>4</b><span>Your furniture arrives at your home</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="section section-alt">
+  <div class="wrap visit">
+    <div class="visit-copy">
+      <p class="kicker reveal">Visit the showroom</p>
+      <h2 class="reveal">Come and sit on it.</h2>
+      <p class="lead reveal">Our first showroom is on Kuri Road, Rawalpindi. Walk in any day, or message us and we will hold a piece for you.</p>
+      <ul class="facts reveal">
+        <li><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-.01"/></svg>
+          <span>Kuri Road, Amer Pura Mohalla Chowk,<br>Rawalpindi 46000</span></li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span>Every day, 9am to 9pm <em class="open-inline" id="openInline"></em></span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>
+          <a id="callLink" href="tel:+923474747751">0347 4747751</a></li>
+      </ul>
+      <div class="hero-actions reveal">
+        <a class="btn btn-gold" href="https://maps.app.goo.gl/go39SuacWcFeY6tn8" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn btn-ghost" id="visitWa" href="#" target="_blank" rel="noopener">WhatsApp us</a>
+      </div>
+    </div>
+    <div class="visit-media reveal">
+      <img class="sign" src="assets/products/storefront-sign.jpg" alt="Woodish Furniture shop sign on Kuri Road" loading="lazy">
+      <iframe title="Woodish Furniture on Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=33.6241875,73.0716875&z=16&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <img src="assets/logo-mark.png" alt="" class="cta-mark" width="84" height="84">
+    <h2 class="reveal">Tell us about your home.</h2>
+    <p class="lead reveal">Send a message, a photo of your room or your basket. We reply on WhatsApp.</p>
+    <a class="btn btn-gold btn-lg" id="ctaWa" href="#" target="_blank" rel="noopener">Start a chat on WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <img src="assets/logo-word.png" alt="Woodish" height="30">
+    <p>Crafting comfort, style and quality for every home.</p>
+    <p class="small">Kuri Road, Amer Pura Mohalla Chowk, Rawalpindi 46000 &middot; 0347 4747751 &middot; Open daily 9am to 9pm</p>
+    <p class="small"><a href="https://www.instagram.com/woodishfurnitur/" target="_blank" rel="noopener">Instagram</a> &middot; &copy; <span id="yr"></span> Woodish Furniture</p>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="fab" id="fabWa" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill-rule="evenodd" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm-4.4 7.2c.3-.5.8-.5 1.1-.5l.8.1.9 2.1c.1.3 0 .6-.2.8l-.7.8c-.1.2-.1.4 0 .6a8 8 0 0 0 3.600 3.100c.2.1.4.1.6-.1l.9-1c.2-.2.4-.3.7-.2l2.100 1c.3.1.4.2.4.5 0 1-.6 2-1.700 2.400-.8.300-1.800.4-5.200-1.100-3.300-1.500-5.100-4.800-5.300-5-.1-.2-1.200-1.600-1.200-3 0-1.400.7-2.100 1-2.400z"/></svg>
+</a>
+
+<!-- Basket drawer -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="Basket">
+  <div class="drawer-head">
+    <h3>Your basket</h3>
+    <button class="x" id="drawerClose" aria-label="Close basket">&times;</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <form class="drawer-foot" id="orderForm" autocomplete="on">
+    <div class="row2">
+      <label>Your name<input name="name" placeholder="Name" autocomplete="name"></label>
+      <label>Area / city<input name="area" placeholder="e.g. Satellite Town" autocomplete="address-level2"></label>
+    </div>
+    <fieldset>
+      <legend>How would you like to pay?</legend>
+      <label class="opt"><input type="radio" name="pay" value="Cash" checked><span>Cash</span></label>
+      <label class="opt"><input type="radio" name="pay" value="Instalments"><span>Instalments</span></label>
+      <label class="opt"><input type="radio" name="pay" value="Credit"><span>Credit</span></label>
+    </fieldset>
+    <fieldset>
+      <legend>Delivery</legend>
+      <label class="opt"><input type="radio" name="ship" value="Home delivery" checked><span>Home delivery</span></label>
+      <label class="opt"><input type="radio" name="ship" value="Pick up from showroom"><span>Pick up</span></label>
+    </fieldset>
+    <label>Notes <input name="notes" placeholder="Colour, size, anything we should know"></label>
+    <button type="submit" class="btn btn-gold btn-wa" id="sendWa">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3z"/></svg>
+      Send basket on WhatsApp
+    </button>
+    <p class="fine">This opens WhatsApp with your list ready to send. Nothing is charged online.</p>
+  </form>
+</aside>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="js/products.js"></script>
+<script src="js/particles.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
